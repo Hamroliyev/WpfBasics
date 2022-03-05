@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfBasics"
         mc:Ignorable="d"
-        Title="WpfBasics" Height="800" Width="400">
+        Loaded="Window_Loaded"
+        Title="WpfBasics" Height="800" Width="400"
+        WindowStartupLocation="CenterScreen">
     <Border Padding="10">
         <StackPanel>
             
@@ -18,7 +20,7 @@
                 </Grid.ColumnDefinitions>
 
                 <Button x:Name="ApplyButton" Click="ApplyButton_Click" Margin="0 0 10 0" Content="Apply" Grid.Column="0"/>
-                <Button Content="Reset" Grid.Column="1"/>
+                <Button x:Name="ReserButton" Click="ReserButton_Click" Content="Reset" Grid.Column="1"/>
                 <Button Margin="10 0 0 0" Content="Refresh" Grid.Column="2"/>
             </Grid>
 
@@ -70,33 +72,33 @@
                 </Grid.ColumnDefinitions>
                 <!--Status-->
                 <StackPanel Grid.Column="0" Margin="0 0 10 0">
-                    <CheckBox Content="Weld"/>
-                    <CheckBox Content="Assambley"/>
-                    <CheckBox Content="Plasma"/>
-                    <CheckBox Content="Laser"/>
-                    <CheckBox Content="Purchase"/>
+                    <CheckBox Checked="CheckBox_Checked" x:Name="CheckBoxWeld" Content="Weld"/>
+                    <CheckBox Checked="CheckBox_Checked" x:Name="CheckBoxAssambley" Content="Assambley"/>
+                    <CheckBox Checked="CheckBox_Checked" x:Name="CheckBoxPlasma" Content="Plasma"/>
+                    <CheckBox Checked="CheckBox_Checked" x:Name="CheckBoxLaser" Content="Laser"/>
+                    <CheckBox Checked="CheckBox_Checked" x:Name="CheckBoxPurchase" Content="Purchase"/>
                 </StackPanel>
                 <!--Revision-->
                 <StackPanel Grid.Column="1">
-                    <CheckBox Content="Lathe"/>
-                    <CheckBox Content="Drill"/>
-                    <CheckBox Content="Fold"/>
-                    <CheckBox Content="Roll"/>
-                    <CheckBox Content="Saw"/>
+                    <CheckBox Checked="CheckBox_Checked" x:Name="CheckBoxLathe" Content="Lathe"/>
+                    <CheckBox Checked="CheckBox_Checked" x:Name="CheckBoxDrill" Content="Drill"/>
+                    <CheckBox Checked="CheckBox_Checked" x:Name="CheckBoxFold" Content="Fold"/>
+                    <CheckBox Checked="CheckBox_Checked" x:Name="CheckBoxRoll" Content="Roll"/>
+                    <CheckBox Checked="CheckBox_Checked" x:Name="CheckBoxSaw" Content="Saw"/>
                 </StackPanel>
             </Grid>
 
             <!--Length-->
             <TextBlock Text="Length" />
-            <TextBox Padding="2" Margin="0 0 0 2"/>
+            <TextBox x:Name="LengthText" Padding="2" Margin="0 0 0 2"/>
 
             <!--Mass-->
             <TextBlock Text="Mass"/>
-            <TextBox Padding="2" IsReadOnly="True" Background="#eee" Margin="0 0 0 3"/>
+            <TextBox x:Name="MassText" Padding="2" IsReadOnly="True" Background="#eee" Margin="0 0 0 3"/>
 
             <!--Finish-->
             <TextBlock Text="Finish" />
-            <ComboBox SelectedIndex="0" Padding="2" Margin="0 0 0 3">
+            <ComboBox SelectionChanged="FinishDropDown_SelectionChanged"  x:Name="FinishDropDown" SelectedIndex="0" Padding="2" Margin="0 0 0 3">
                 <ComboBoxItem Content="Painted"/>
                 <ComboBoxItem Content="Not Painted"/>
             </ComboBox>
@@ -110,7 +112,7 @@
 
             <!--Sopplier Name-->
             <TextBlock Text="Supplier Name" />
-            <TextBox Padding="2" Margin="0 0 0 3"/>
+            <TextBox x:Name="SupplierNameText" TextChanged="SupplierNameText_TextChanged" Padding="2" Margin="0 0 0 3"/>
 
             <!--Sopplier Code-->
             <TextBlock Text="Supplier Code" />
@@ -120,7 +122,7 @@
 
             <!--Note-->
             <TextBlock Text="Note" />
-            <TextBox Padding="2"/>
+            <TextBox x:Name="NoteText" Padding="2"/>
         </StackPanel>
     </Border>
 </Window>
