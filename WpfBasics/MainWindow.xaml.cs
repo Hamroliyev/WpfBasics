@@ -24,5 +24,10 @@ namespace WpfBasics
         {
             InitializeComponent();
         }
+
+        private void ApplyButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Hi");
+        }
     }
 }

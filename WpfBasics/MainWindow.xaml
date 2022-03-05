@@ -17,7 +17,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button Margin="0 0 10 0" Content="Apply" Grid.Column="0"/>
+                <Button x:Name="ApplyButton" Click="ApplyButton_Click" Margin="0 0 10 0" Content="Apply" Grid.Column="0"/>
                 <Button Content="Reset" Grid.Column="1"/>
                 <Button Margin="10 0 0 0" Content="Refresh" Grid.Column="2"/>
             </Grid>
@@ -26,7 +26,7 @@
             
             <!--Description-->
             <TextBlock Text="Description" />
-            <TextBox Padding="2"/>
+            <TextBox x:Name="DescriptionText" Padding="2"/>
             
             <!--Status and Revision-->
             <Grid>
